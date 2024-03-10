@@ -47,9 +47,9 @@ from io_scene_niftools.utils.decorators import register_modules, unregister_modu
 bl_info = {
     "name": "NetImmerse/Gamebryo format support",
     "description": "Import and export files in the NetImmerse/Gamebryo formats (.nif, .kf, .egm)",
-    "author": "Niftools team",
+    "author": "Niftools team + bonzairob",
     "blender": (2, 82, 0),
-    "version": (0, 1, 1),  # can't read from VERSION, blender wants it hardcoded
+    "version": (0, 1, 1, 'a'),  # can't read from VERSION, blender wants it hardcoded
     "api": 39257,
     "location": "File > Import-Export",
     "warning": "Generally stable port of the Niftool's Blender NifScripts, many improvements, still work in progress",
