@@ -102,7 +102,7 @@ class Mesh:
             mesh_materials = [None]
 
         # vertex color check
-        mesh_hasvcol = len(eval_mesh.vertex_colors) > 0 or len(eval_mesh.color_attributes) > 0
+        mesh_hasvcol = len(eval_mesh.vertex_colors) > 0 or (hasattr(eval_mesh, 'color_attributes') and len(eval_mesh.color_attributes) > 0)
         # list of body part (name, index, vertices) in this mesh
         polygon_parts = self.get_polygon_parts(b_obj, eval_mesh)
         nif_scene = bpy.context.scene.niftools_scene
@@ -366,7 +366,7 @@ class Mesh:
         Blender's uv vertices and normals are per face.
         Blender supports per face vertex coloring.
         Blender loops, on the other hand, are much like nif vertices, and refer to one vertex associated with a polygon
-        
+
         The algorithm merges loops with the same information (as long as they have the same original vertex) and
         triangulates the mesh without needing a triangulation modifier.
         """
